@@ -6,16 +6,10 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       }
-      }
     })
   },
 
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropColumn('Contacts', 'Email');
-  }
-};
-
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Contacts');
   }
 };
