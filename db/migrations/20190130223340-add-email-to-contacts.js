@@ -10,6 +10,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropColumn('Contacts', 'Email');
+    return queryInterface.removeColumn('Contacts', 'Email');
   }
 };

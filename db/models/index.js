@@ -11,12 +11,10 @@ console.log(env);
 console.log(path1[env]);
 const db = {};
 
-let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+const sequelize = new Sequelize(config.database, config.username, config.password, Object.assign(config, {
+  host: 'localhost',
+  dialect: 'postgres',
+}));
 
 fs
   .readdirSync(__dirname)
